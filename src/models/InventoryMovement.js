@@ -4,8 +4,8 @@ module.exports = (sequelize) => {
   return sequelize.define("InventoryMovement", {
     inventory_movement_id: {
       type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
-      autoIncrement: true,
       unique: true,
       allowNull: false,
     },

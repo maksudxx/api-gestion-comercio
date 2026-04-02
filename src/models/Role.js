@@ -4,11 +4,11 @@ module.exports = (sequelize) => {
   return sequelize.define("Role", {
     role_id: {
       type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
-      autoIncrement: true,
       allowNull: false,
       unique: true,
     },
-    role_name: { type: DataTypes.TEXT(50), allowNull: false },
+    role_name: { type: DataTypes.STRING(50), allowNull: false },
   });
 };

@@ -9,8 +9,17 @@ module.exports = (sequelize) => {
       unique: true,
       allowNull: false,
     },
+    service_ticket_type: { 
+      type: DataTypes.ENUM("HARDWARE", "SOFTWARE", "BOTH"), 
+      allowNull: false,
+      defaultValue: "BOTH"
+    },
+    service_ticket_device_brand: { type: DataTypes.STRING(100) },
+    service_ticket_device_model: { type: DataTypes.STRING(100) },
+    service_ticket_serial_number: { type: DataTypes.STRING(100) },
     service_ticket_device_info: { type: DataTypes.TEXT, allowNull: false },
     service_ticket_initial_diagnosis: { type: DataTypes.TEXT },
+    service_ticket_cost: { type: DataTypes.DECIMAL(12, 2) },
     service_ticket_entry_date: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
@@ -18,6 +27,6 @@ module.exports = (sequelize) => {
     service_ticket_estimated_completion: {
       type: DataTypes.DATE,
     },
-    service_ticket_status: { type: DataTypes.STRING(50) },
+    service_ticket_status: { type: DataTypes.STRING(50), defaultValue: "PENDING" },
   });
 };
