@@ -1,6 +1,6 @@
-const { DataTypes } = require("sequelize");
+import { DataTypes } from "sequelize";
 
-module.exports = (sequelize) => {
+export default (sequelize) => {
   return sequelize.define("InventoryMovement", {
     inventory_movement_id: {
       type: DataTypes.UUID,

@@ -1,6 +1,6 @@
-const { DataTypes } = require("sequelize");
+import { DataTypes } from "sequelize";
 
-module.exports = (sequelize) => {
+export default (sequelize) => {
   return sequelize.define("Product", {
     product_id: {
       type: DataTypes.UUID,
@@ -15,5 +15,6 @@ module.exports = (sequelize) => {
     product_stock_quantity: { type: DataTypes.INTEGER, defaultValue: 0 },
     product_is_service: { type: DataTypes.BOOLEAN, defaultValue: false },
     product_sku: { type: DataTypes.STRING(50), unique: true },
+    product_warranty_months: { type: DataTypes.INTEGER, defaultValue: 0 },
   });
 };
