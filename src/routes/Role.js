@@ -1,8 +1,5 @@
 import { Router } from "express";
-import roleRoutes from "./routes/Role.js";
 
 const router = Router();
-
-router.use("/roles", roleRoutes);
-
+router.get("/");
 export default router;

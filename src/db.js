@@ -17,11 +17,11 @@ import userModel from "./models/User.js";
 
 dotenv.config();
 
-const { DB_USER, DB_PASSWORD, DB_HOST, BD_PORT, DATABASE, DATABASE_URL } =
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DATABASE, DATABASE_URL } =
   process.env;
 
 //definimos la url local de la base de datos
-const DB_LOCAL = `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${BD_PORT}/${DATABASE}`;
+const DB_LOCAL = `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DATABASE}`;
 
 //seleccionamos la url de la base de datos a usar
 const targetUrl = DB_LOCAL || DATABASE_URL;
